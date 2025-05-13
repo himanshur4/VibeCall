@@ -16,19 +16,19 @@ import useAuthUser from './hooks/useAuthUser.js'
 const App = () => {
   //tanstack query
 
- const {isLoading,authUser}=useAuthUser();
- const isAuthenticated=Boolean(authUser);
- const isOnboarded=authUser?.isOnboarded
+  const { isLoading, authUser } = useAuthUser();
+  const isAuthenticated = Boolean(authUser);
+  const isOnboarded = authUser?.isOnboarded
 
   if (isLoading) {
     return <PageLoader />;
   }
   return (<div className="h-screen" data-theme="night">
     <Routes>
-      <Route path="/" element={isAuthenticated&&isOnboarded ? <HomePage /> : (<Navigate to={!isAuthenticated?"/login":"/onboarding"} />)} />
-      <Route path="/login" element={!isAuthenticated ? <LogInPage /> : <Navigate to="/" />} />
-      <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to="/" />} />
-      <Route path="/onboarding" element={isAuthenticated?(!isOnboarded?(<OnboardingPage/>):(<Navigate to="/"/>)):(<Navigate to="/login"/>)} />
+      <Route path="/" element={isAuthenticated && isOnboarded ? <HomePage /> : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
+      <Route path="/login" element={!isAuthenticated ? (<LogInPage />) : (<Navigate to={isOnboarded ? "/" : "/onboarding"} />)} />
+      <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to={isOnboarded?"/":"/onboarding"} />} />
+      <Route path="/onboarding" element={isAuthenticated ? (!isOnboarded ? (<OnboardingPage />) : (<Navigate to="/" />)) : (<Navigate to="/login" />)} />
       <Route path="/chat" element={isAuthenticated ? <ChatPage /> : <Navigate to="/login" />} />
       <Route path="/call" element={isAuthenticated ? <CallPage /> : <Navigate to="/login" />} />
       <Route path="/notifications" element={isAuthenticated ? <NotificationsPage /> : <Navigate to="/login" />} />
