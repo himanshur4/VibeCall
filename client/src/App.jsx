@@ -12,6 +12,7 @@ import { Toaster } from "react-hot-toast"
 import PageLoader from './components/PageLoader.jsx'
 
 import useAuthUser from './hooks/useAuthUser.js'
+import Layout from './components/Layout.jsx'
 
 const App = () => {
   //tanstack query
@@ -23,9 +24,11 @@ const App = () => {
   if (isLoading) {
     return <PageLoader />;
   }
-  return (<div className="h-screen" data-theme="night">
+  return (<div className="h-screen" data-theme="forest">
     <Routes>
-      <Route path="/" element={isAuthenticated && isOnboarded ? <HomePage /> : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
+      <Route path="/" element={isAuthenticated && isOnboarded ?(<Layout showSidebar={true}>
+        <HomePage/>
+        </Layout>): (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
       <Route path="/login" element={!isAuthenticated ? (<LogInPage />) : (<Navigate to={isOnboarded ? "/" : "/onboarding"} />)} />
       <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to={isOnboarded?"/":"/onboarding"} />} />
       <Route path="/onboarding" element={isAuthenticated ? (!isOnboarded ? (<OnboardingPage />) : (<Navigate to="/" />)) : (<Navigate to="/login" />)} />
