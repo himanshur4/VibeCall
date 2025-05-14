@@ -12,7 +12,7 @@ const Navbar = () => {
   const {logoutMutation}=useLogout();
   return (
     <nav className="bg-base-200 border-b border-base-300 sticky top-0 z-30 h-16 flex items-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-end w-full">
             {/* Logo, only  in chat page */}
             {isChatPage&&(
@@ -26,7 +26,7 @@ const Navbar = () => {
                 </Link>
               </div>
             )}
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-3 sm:gap-5">
               <Link to={"/notifications"}>
                 <button className="btn btn-ghost btn-circle">
                     <BellIcon className="size-6 to-base-content opacity-70"/>
