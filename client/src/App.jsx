@@ -13,10 +13,11 @@ import PageLoader from './components/PageLoader.jsx'
 
 import useAuthUser from './hooks/useAuthUser.js'
 import Layout from './components/Layout.jsx'
+import { useThemeStore } from './store/useThemeStore.js'
 
 const App = () => {
   //tanstack query
-
+  const {theme,setTheme}=useThemeStore();
   const { isLoading, authUser } = useAuthUser();
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = authUser?.isOnboarded
@@ -24,7 +25,7 @@ const App = () => {
   if (isLoading) {
     return <PageLoader />;
   }
-  return (<div className="h-screen" data-theme="forest">
+  return (<div className="h-screen" data-theme={theme}>
     <Routes>
       <Route path="/" element={isAuthenticated && isOnboarded ?(<Layout showSidebar={true}>
         <HomePage/>
