@@ -1,8 +1,6 @@
-import {create} from 'zustand'
+import { create } from 'zustand'
 
-export const useThemeStore= create((set)=>(
-    {
-        theme:"coffee",
-        setTheme:(theme)=>set({theme}),
-    }
-))
+export const useThemeStore = create((set) => ({
+    theme:"forest",
+    setTheme:(theme)=>set({theme}),
+}))
