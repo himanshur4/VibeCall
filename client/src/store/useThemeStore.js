@@ -1,6 +1,9 @@
 import { create } from 'zustand'
 
 export const useThemeStore = create((set) => ({
-    theme:"forest",
-    setTheme:(theme)=>set({theme}),
+    theme:localStorage.getItem("vibeCall-theme")||"forest",
+    setTheme:(theme)=>{
+        localStorage.setItem("vibeCall-theme",theme);
+        set({theme});
+    }
 }))
