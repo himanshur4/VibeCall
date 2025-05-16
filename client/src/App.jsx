@@ -31,11 +31,12 @@ const App = () => {
         <HomePage/>
         </Layout>): (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
       <Route path="/login" element={!isAuthenticated ? (<LogInPage />) : (<Navigate to={isOnboarded ? "/" : "/onboarding"} />)} />
-      <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to={isOnboarded?"/":"/onboarding"} />} />
+      <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to={!isOnboarded?"/onboarding":"/"} />} />
       <Route path="/onboarding" element={isAuthenticated ? (!isOnboarded ? (<OnboardingPage />) : (<Navigate to="/" />)) : (<Navigate to="/login" />)} />
       <Route path="/chat" element={isAuthenticated ? <ChatPage /> : <Navigate to="/login" />} />
       <Route path="/call" element={isAuthenticated ? <CallPage /> : <Navigate to="/login" />} />
-      <Route path="/notifications" element={isAuthenticated ? <NotificationsPage /> : <Navigate to="/login" />} />
+      <Route path="/notifications" element={isAuthenticated&&isOnboarded ? <Layout showSidebar={true}>
+      <NotificationsPage /> </Layout>: isAuthenticated?<Navigate to="/onboarding" />:<Navigate to="/login"/>}/>
     </Routes>
     <Toaster />
   </div>
