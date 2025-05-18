@@ -26,12 +26,12 @@ const Navbar = () => {
                 </Link>
               </div>
             )}
-            <div className="flex items-center gap-3 sm:gap-5">
+            <div className="flex items-center gap-3 sm:gap-4 ">
               <Link to={"/notifications"}>
                 <button className="btn btn-ghost btn-circle">
                     <BellIcon className="size-6 to-base-content opacity-70"/>
                 </button>
-              </Link>
+              </Link> 
             </div>
 
             <ThemeSelector/>
