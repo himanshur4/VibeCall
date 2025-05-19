@@ -20,9 +20,7 @@ const App = () => {
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = authUser?.isOnboarded
 
-  if (isLoading) {
-    return <PageLoader />;
-  }
+
   return (<div data-theme={theme}>
     <Routes>
       <Route path="/" element={isAuthenticated && isOnboarded ? (<Layout showSidebar={true}>
