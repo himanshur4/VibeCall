@@ -3,7 +3,6 @@ import useAuthUser from "../hooks/useAuthUser.js"
 import { BellIcon, LogOutIcon, Rainbow } from "lucide-react";
 import ThemeSelector from "./ThemeSelector.jsx";
 import useLogout from "../hooks/useLogout.js";
-// import useInMobile from "../hooks/useInScreenType.jsx";
 import useInScreenType from "../hooks/useInScreenType.jsx";
 
 
