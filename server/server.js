@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cors({
-    origin: ["http://localhost:5173",process.env.FRONTEND_URL].filter(Boolean),
+    origin: ["http://localhost:5173","https://vibe-call2.vercel.app"],
     credentials: true,//allow frontend to send cookies
     
 }));
