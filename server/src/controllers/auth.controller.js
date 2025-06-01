@@ -47,14 +47,14 @@ export async function signup(req, res) {
             expiresIn: "7d"
         });
 
-        res.cookie("jwt", token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+        const cookieOptions = {
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             httpOnly: true,
-            sameSite: "none",
-            secure: true,
-            domain: process.env.NODE_ENV === "production" ? ".vercel.app" : "localhost",
-            path: "/"
-        })
+            sameSite: 'none',
+            secure: true
+        };
+
+        res.cookie("jwt", token, cookieOptions);
         res.status(201).json({ success: true, user: newUser })
     } catch (error) {
         console.log("Error in signup controller", error);
@@ -80,15 +80,14 @@ export async function login(req, res) {
             expiresIn: "7d"
         });
 
-        res.cookie("jwt", token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+        const cookieOptions = {
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             httpOnly: true,
-            sameSite: "none",
-            secure: true,
-            domain: process.env.NODE_ENV === "production" ? ".vercel.app" : "localhost",
-            path: "/"
-        });
+            sameSite: 'none',
+            secure: true
+        };
 
+        res.cookie("jwt", token, cookieOptions);
         res.status(200).json({ success: true, user });
 
 
@@ -106,7 +105,12 @@ export async function login(req, res) {
 }
 
 export function logout(req, res) {
-    res.clearCookie("jwt");
+    res.cookie('jwt', '', { 
+        httpOnly: true,
+        expires: new Date(0),
+        sameSite: 'none',
+        secure: true
+    });
     res.status(200).json({ success: true, message: "Logout Successful" });
 }
 
