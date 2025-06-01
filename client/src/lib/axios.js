@@ -11,14 +11,3 @@ export const axiosInstance = axios.create({
     credentials: 'include'
 });
 
-// Add response interceptor to handle 401 errors
-axiosInstance.interceptors.response.use(
-    (response) => response,
-    async (error) => {
-        if (error.response?.status === 401) {
-            // Redirect to login page on 401 unauthorized
-            window.location.href = '/login';
-        }
-        return Promise.reject(error);
-    }
-);   
