@@ -13,6 +13,7 @@ const Navbar = () => {
   const isFriendPage=location.pathname?.startsWith("/friends");
   const isNotifPage=location.pathname?.startsWith("/notifications");
   const inMobile=useInScreenType();
+  const isHomePage=location.pathname==="/";
   const {logoutMutation}=useLogout();
   return (
     <nav className="bg-base-200 border-b border-base-300 sticky top-0 z-30 h-16 flex items-center">
@@ -30,7 +31,7 @@ const Navbar = () => {
                 </Link>
               </div>
             )}
-            {(inMobile&&(isFriendPage||isNotifPage))&&(
+            {(inMobile&&(isFriendPage||isNotifPage||isHomePage))&&(
               <div>
                 <Link to="/" className="flex items-center gap-0">
                   <Rainbow className="size-9 text-primary"/>
