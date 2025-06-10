@@ -35,7 +35,7 @@ function SignUpPage() {
               <div className='space-y-4'>
                 <div>
                   <h2 className='text-xl font-semibold'>Create an Account</h2>
-                  <p className='text-sm opacity-70'>Join VibeCall and start your language learning adventure!</p>
+                  <p className='text-sm opacity-70'>Join VibeCall to find new friends!</p>
                 </div>
                 <div className='space-y-3'>
                   {/* FULLNAME */}
