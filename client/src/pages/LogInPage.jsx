@@ -88,7 +88,7 @@ const LogInPage = () => {
           <div className="max-w-md p-8">
             {/*Illustration */}
             <div className="relative aspect-square max-w-sm mx-auto">
-              <img src="./login1.png" alt="login illustration" className="w-full h-full" />
+              <img src="./ppp.png" alt="login illustration" className="w-full h-full" />
             </div>
             <div className="text-center space-y-3 mt-6">
               <h2 className="text-xl font-semibold">Connect with new friends</h2>

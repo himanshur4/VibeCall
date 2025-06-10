@@ -26,13 +26,7 @@ function SignUpPage() {
             <Rainbow className='size-12 text-primary' />
             <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>VibeCall</span>
           </div>
-          {/* ERROR MESSAGE IF ANY*/}
-
-          {error && (
-            <div className='alert alert-error mb-4'>
-              <span>{error.message}</span>
-            </div>
-          )}
+          
 
           {/* signup form */}
           <div className="w-full">
@@ -115,7 +109,7 @@ function SignUpPage() {
           <div className="max-w-md p-8">
             {/* Illustration */}
             <div className="relative aspect-square max-w-sm mx-auto">
-              <img src="/signup.png" alt="signup img" className='w-full h-full' />
+              <img src="/ppp.png" alt="signup img" className='w-full h-full' />
             </div>
             <div className="text-center space-y-3 mt-6">
               <h2 className='text-xl font-semibold'>Connect with new friends worldwide.</h2>
