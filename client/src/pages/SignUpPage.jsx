@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Rainbow } from 'lucide-react'
 import { Link } from 'react-router';
 import useSignup from '../hooks/useSignup.js';
+import { useThemeStore } from '../store/useThemeStore.js';
 function SignUpPage() {
 
   const [signupData, setSignupData] = useState({
@@ -15,9 +16,9 @@ function SignUpPage() {
     e.preventDefault();
     signupMutation(signupData);
   };
-
+  const {theme}=useThemeStore();
   return (
-    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8' >
+    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8' data-theme={theme}>
       <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
         {/* signup form- left side */}
         <div className="w-full lg:w-1/2 p-4 sm:p-8 flex flex-col">
