@@ -26,11 +26,7 @@ const LogInPage = () => {
             <Rainbow className='size-12 text-primary' />
             <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>VibeCall</span>
           </div>
-          {/* ERROR MESSAGE DISPLAY  */}
-          {error && (
-            <div className="alert alert-error mb-4">
-              <span>{error.response.data.message}</span>
-            </div>)}
+      
 
           <div className="w-full">
             <form onSubmit={handleLogin}>
