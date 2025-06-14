@@ -9,9 +9,9 @@ import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5001;
-
+const frontendUrl = process.env.FRONTEND_URL ;
 app.use(cors({
-    origin: ["http://localhost:5173", "https://vibe-call.vercel.app"],
+    origin: ["http://localhost:5173", frontendUrl],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-csrf-token'],

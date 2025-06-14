@@ -21,7 +21,7 @@ const App = () => {
   const isOnboarded = authUser?.isOnboarded
 
   if (!isAuthenticated&&isLoading) {
-    return <PageLoader />;
+    return null;
   }
   return (<div data-theme={theme}>
     <Routes>
