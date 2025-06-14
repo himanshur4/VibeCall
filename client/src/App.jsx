@@ -27,22 +27,22 @@ const App = () => {
     <Routes>
       <Route path="/" element={isAuthenticated && isOnboarded ? (<Layout showSidebar={true}>
         <HomePage />
-      </Layout>) : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
+      </Layout>) : (<Navigate to={!isAuthenticated ? "/signup" : "/onboarding"} />)} />
       <Route path="/login" element={!isAuthenticated ? (<LogInPage />) : (<Navigate to={isOnboarded ? "/" : "/onboarding"} />)} />
       <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to={!isOnboarded ? "/onboarding" : "/"} />} />
-      <Route path="/onboarding" element={isAuthenticated ? (!isOnboarded ? (<OnboardingPage />) : (<Navigate to="/" />)) : (<Navigate to="/login" />)} />
+      <Route path="/onboarding" element={isAuthenticated ? (!isOnboarded ? (<OnboardingPage />) : (<Navigate to="/" />)) : (<Navigate to="/signup" />)} />
 
       <Route path="/chat/:id" element={isAuthenticated && isOnboarded ?
         <Layout showSidebar={false}>
           <ChatPage />
         </Layout>
-        : <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />} />
+        : <Navigate to={!isAuthenticated ? "/signup" : "/onboarding"} />} />
 
-      <Route path="/call/:id" element={isAuthenticated && isOnboarded ? <CallPage /> : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
+      <Route path="/call/:id" element={isAuthenticated && isOnboarded ? <CallPage /> : (<Navigate to={!isAuthenticated ? "/signup" : "/onboarding"} />)} />
 
       <Route path="/notifications" element={isAuthenticated && isOnboarded ? <Layout showSidebar={true}>
-        <NotificationsPage /> </Layout> : isAuthenticated ? <Navigate to="/onboarding" /> : <Navigate to="/login" />} />
-      <Route path="/friends" element={isAuthenticated && isOnboarded ? (<Layout showSidebar={true}><FriendsPage /></Layout>) : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
+        <NotificationsPage /> </Layout> : isAuthenticated ? <Navigate to="/onboarding" /> : <Navigate to="/signup" />} />
+      <Route path="/friends" element={isAuthenticated && isOnboarded ? (<Layout showSidebar={true}><FriendsPage /></Layout>) : (<Navigate to={!isAuthenticated ? "/signup" : "/onboarding"} />)} />
     </Routes>
     <Toaster />
   </div>
