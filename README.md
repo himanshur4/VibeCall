@@ -15,13 +15,10 @@
 
 ## 🛠️ Tech Stack
 
-### 🔧 Backend
 - **Node.js**
 - **Express.js**
 - **MongoDB (Mongoose)**
 - **JWT** for authentication
-
-### 🌐 Frontend
 - **React.js**
 - **TanStack Query** for efficient data fetching
 - **Tailwind CSS + DaisyUI** for UI components and theming
