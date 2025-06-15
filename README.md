@@ -1,4 +1,4 @@
-```markdown
+
 # VibeCall 🎥💬
 
 **VibeCall** is a full-stack video calling and messaging web application where users can add friends, chat in real-time, and initiate video calls — all within a clean and intuitive UI.
@@ -89,4 +89,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 [MIT](LICENSE)
 
-```
+
