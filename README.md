@@ -3,7 +3,7 @@
 
 **VibeCall** is a full-stack video calling and messaging web application where users can add friends, chat in real-time, and initiate video calls — all within a clean and intuitive UI.
 
-**Live Preview:** vibe-call.vercel.app
+**Live Preview:** https://vibe-call.vercel.app
 
 ## 🚀 Features
 
