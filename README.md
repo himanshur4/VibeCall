@@ -69,8 +69,11 @@ VITE_API_URL=http://localhost:5000
 
 ## 📸 Screenshots
 
-![image](https://github.com/user-attachments/assets/e51599f4-fd36-4e6a-b2e4-036d5744da65)
-![image](https://github.com/user-attachments/assets/9b9bd22f-10dc-4524-8d07-fa0c7df7240f)
+![image](https://github.com/user-attachments/assets/8ff274a7-5759-49eb-a4c1-a73a332aa0cc)
+![image](https://github.com/user-attachments/assets/de445ae0-8a21-4da1-88b6-96c7ea546520)
+
+![image](https://github.com/user-attachments/assets/0c25f16b-f127-407a-8f91-ecd81fc9ccc8)
+
 
 
 
