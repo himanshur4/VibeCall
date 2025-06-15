@@ -76,8 +76,6 @@ VITE_API_URL=http://localhost:5000
 
 ![Screenshot 2025-06-15 204849](https://github.com/user-attachments/assets/935add4e-8977-4de6-afb8-43d6dc8c47dc)
 
-![Screenshot 2025-06-15 204834](https://github.com/user-attachments/assets/ec146ab8-6125-4a17-aa1f-92dc367e3deb)
-
 
 
 
