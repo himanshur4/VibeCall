@@ -91,11 +91,6 @@ export async function login(req, res) {
         res.status(200).json({ success: true, user });
 
 
-
-
-
-
-
     } catch (error) {
         console.log("Error in login controller", error.message);
         res.status(500).json({ message: "Internal Server Error" });
@@ -140,7 +135,7 @@ export async function onboard(req, res) {
         }
        try {
         await upsertStreamUser({
-            id:updatedUser._id,
+            id:updatedUser._id.toString(),
             name:updatedUser.fullName,
             image:updatedUser.profilePic||"",
         })
