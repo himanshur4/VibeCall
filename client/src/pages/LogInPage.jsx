@@ -38,7 +38,7 @@ const LogInPage = () => {
 
                 <div className="flex flex-col gap-3">
                   <div className="form-control w-full space-y-2">
-                    <label className="lebel">
+                    <label className="label">
                       <span className="label-text">Email</span>
                     </label>
                     <input type="email" placeholder="hello@example.com"
