@@ -13,8 +13,7 @@ export async function getRecommendedUsers(req, res) {
             ]
         });
 
-        const getUser = await Promise.all(
-            recommendedUsers.map(async user => {
+        const getUser = recommendedUsers.map(async user => {
                 const hasReqSent = await FriendRequest.findOne({
                     $or: [
                         { sender: currentUserId, recipient: user.id,status: "pending" },
@@ -22,8 +21,7 @@ export async function getRecommendedUsers(req, res) {
                     ]
                 });
                 return hasReqSent ? user : null;
-            })
-        );
+            });
 
         const filteredUsers = getUser.filter(user => user !== null);
 
