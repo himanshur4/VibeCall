@@ -17,8 +17,8 @@ export async function getRecommendedUsers(req, res) {
             recommendedUsers.map(async user => {
                 const hasReqSent = await FriendRequest.findOne({
                     $or: [
-                        { sender: currentUserId, recipient: user._id },
-                        { sender: user._id, recipient: currentUserId }
+                        { sender: currentUserId, recipient: user.id },
+                        { sender: user.id, recipient: currentUserId }
                     ]
                 });
                 return hasReqSent ? user : null;
