@@ -16,8 +16,10 @@ export async function getRecommendedUsers(req, res) {
         const getUser = await Promise.all(
             recommendedUsers.map(async user => {
                 const hasReqSent = await FriendRequest.findOne({
-                    sender: user._id,
-                    recipient: currentUserId
+                    $or: [
+                        { sender: currentUserId, recipient: user._id },
+                        { sender: user._id, recipient: currentUserId }
+                    ]
                 });
                 return hasReqSent ? user : null;
             })
@@ -25,7 +27,7 @@ export async function getRecommendedUsers(req, res) {
 
         const filteredUsers = getUser.filter(user => user !== null);
 
-        res.status(200).json(filteredUsers);
+        res.status(200).json(filteredUsers );
     } catch (error) {
         console.error("Error in getRecommendedUsers controller", error.message);
         res.status(500).json({ message: "Internal Server Error" });
