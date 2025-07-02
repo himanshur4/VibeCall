@@ -24,7 +24,7 @@ const HomePage = () => {
     queryKey: ["outgoingFriendReqs"],
     queryFn: getOutgoingFriendReqs,
   });
-  const { mutate: sendRequestMutation, isPending } = useMutation({
+  const { mutate: sendRequestMutation } = useMutation({
     mutationFn: sendFriendRequest,
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["outgoingFriendReqs"] }),
 
@@ -117,7 +117,7 @@ useEffect(() => {
                     {user.bio && <p className="text-sm opacity-70">{user.bio}</p>}
                     {/* ACTION BUTTON */}
                     <button className={`btn w-full mt-2 ${hasRequestSent ? "btn-disabled" : "btn-primary"}`} onClick={() => sendRequestMutation(user._id)}
-                      disabled={hasRequestSent || isPending}>
+                      disabled={hasRequestSent}>
                       {hasRequestSent ? (
                         <>
                           <CheckCircleIcon className="size-4 mr-2" />
