@@ -5,7 +5,7 @@ const PageLoader = () => {
   const {theme}=useThemeStore();
   return (
     <div className='flex-col min-h-screen  flex items-center justify-center' data-theme={theme}>
-      <LucideLoaderPinwheel className='animate-spin size-10 text-primary'/>
+      <LucideLoader2 className='animate-spin size-10 text-primary'/>
     </div>
   )
 }
